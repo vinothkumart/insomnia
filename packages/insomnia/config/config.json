@@ -1,8 +1,8 @@
 {
-  "name": "insomnia",
+  "name": "rage",
   "appId": "com.insomnia.app",
-  "userDataFolder": "Insomnia",
-  "productName": "Insomnia",
+  "userDataFolder": "Rage",
+  "productName": "Rage",
   "synopsis": "The Collaborative API Client and Design Tool",
   "icon": "https://github.com/kong/insomnia/blob/develop/packages/insomnia/src/icons/icon.ico?raw=true",
   "changelogUrl": "https://insomnia.rest/changelog",
@@ -15,6 +15,27 @@
     "development": "rTOCSvGV23cHGJyb3HI9EUQDNA6ar7ay",
     "production": "4l7QUfACrIcqvC913hiIwAA2BDYP2OJ1"
   },
+  "appUrl":{
+    "development": "http://localhost:3000",
+    "production": "https://app.insomnia.rest"
+  },
+  "auth0Domain":{
+    "development": "http://localhost:3000/oauth",
+    "production": "https://app.insomnia.rest"
+  },
+  "clientId":{
+    "development": "d225454f1a6ea4b8f77d",
+    "production": "https://app.insomnia.rest"
+  },
+  "clientSecret":{
+    "development": "7c3654412cc3a396f3fbad1140eddebcd3cdbe52",
+    "production": "https://app.insomnia.rest"
+  },
+  "apiIdentifier":{
+    "development": "com.insomnia.app",
+    "production": "https://app.insomnia.rest"
+  },
+  
   "sentryDsn": "https://aaec2e800e644070a8daba5b7ad02c16@o1147619.ingest.sentry.io/6311804",
   "plugins": [
     "insomnia-plugin-base64",

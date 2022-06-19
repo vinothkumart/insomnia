@@ -16,7 +16,7 @@ const neDbAdapter: DbAdapter = async (dir, filterTypes) => {
   const types = filterTypes?.length ? filterTypes : Object.keys(db) as (keyof Database)[];
   const promises = types.map(t =>
     new Promise((resolve, reject) => {
-      const filePath = path.join(dir, `insomnia.${t}.db`);
+      const filePath = path.join(dir, `rage.${t}.db`);
       const collection = new NeDB({
         autoload: true,
         filename: filePath,

@@ -431,7 +431,7 @@ export const General: FC = () => {
         setting="incognitoMode"
       />
 
-      <BooleanSetting
+      {/* <BooleanSetting
         descriptions={[
           `Help Kong improve its products by sending anonymous data about features and plugins used, hardware and software configuration, statistics on number of requests, ${strings.collection.plural.toLowerCase()}, ${strings.document.plural.toLowerCase()}, etc.`,
           'Please note that this will not include personal data or any sensitive information, such as request data, names, etc.',
@@ -444,7 +444,7 @@ export const General: FC = () => {
         descriptions={['Insomnia periodically makes background requests to api.insomnia.rest/notifications for things like email verification, out-of-date billing information, trial information.']}
         label="Allow Notification Requests"
         setting="allowNotificationRequests"
-      />
+      /> */}
 
       <DevelopmentOnlySettings />
     </div>

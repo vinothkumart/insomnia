@@ -676,7 +676,7 @@ const allTypes = () => Object.keys(db);
 
 function getDBFilePath(modelType: string) {
   // NOTE: Do not EVER change this. EVER!
-  return fsPath.join(getDataDirectory(), `insomnia.${modelType}.db`);
+  return fsPath.join(getDataDirectory(), `rage.${modelType}.db`);
 }
 
 // ~~~~~~~~~~~~~~~~ //

@@ -1,0 +1,51 @@
+<!-- views/success.ejs -->
+<!doctype html>
+<html>
+  <head>
+    <title>Github Oauth</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> <!-- load bulma css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- load fontawesome -->
+      <style>
+          body        { padding-top:70px; }
+      </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+          <h1 class="text-primary  text-center"><span class="fa fa-github"></span> Github Information</h1>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="well">
+                <p>
+                  <strong>Name</strong>: <%= userData.name %><br>
+                  <strong>Username</strong>: <%= userData.login %><br>
+                    <strong>Company</strong>: <%= userData.company %><br>
+                    <strong>Bio</strong>: <%= userData.bio %>
+                </p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var qs = (function(a) {
+          if (a == "") return {};
+          var b = {};
+          for (var i = 0; i < a.length; ++i)
+          {
+              var p=a[i].split('=', 2);
+              if (p.length == 1)
+                  b[p[0]] = "";
+              else
+                  b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+          }
+          return b;
+      })(window.location.search.substr(1).split('&'));
+
+      window.setTimeout(function() {
+        window.location.href = 'insomniadev://oauth/github/authenticate?code=' + qs["code"] + "&state=" + qs['state'];
+      }, 50);
+    </script>
+    </script>
+  </body>
+</html>

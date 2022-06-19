@@ -508,7 +508,7 @@ export class Wrapper extends PureComponent<WrapperProps, State> {
       <Fragment>
         <div key="modals" className="modals">
           <ErrorBoundary showAlert>
-            <AnalyticsModal />
+            {/* <AnalyticsModal /> */}
             <AlertModal ref={registerModal} />
             <ErrorModal ref={registerModal} />
             <PromptModal ref={registerModal} />

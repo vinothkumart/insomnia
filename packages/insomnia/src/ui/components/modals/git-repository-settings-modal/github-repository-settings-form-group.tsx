@@ -198,7 +198,7 @@ const GitHubRepositoryForm = ({
 
   useEffect(() => {
     let isMounted = true;
-
+    console.log(token);
     if (token && !user) {
       fetchGraphQL<GitHubUserInfoQueryResult>({
         query: GitHubUserInfoQuery,

@@ -76,10 +76,10 @@ export class UnconnectedSettingsModal extends PureComponent<Props, State> {
       <Modal ref={this._setModalRef} tall freshState {...this.props}>
         <ModalHeader>
           {getProductName()} Preferences
-          <span className="faint txt-sm">
+          {/* <span className="faint txt-sm">
             &nbsp;&nbsp;–&nbsp; v{getAppVersion()}
             {email ? ` – ${email}` : null}
-          </span>
+          </span> */}
         </ModalHeader>
         <ModalBody noScroll>
           <Tabs className="react-tabs" defaultIndex={currentTabIndex ?? undefined}>
@@ -96,12 +96,12 @@ export class UnconnectedSettingsModal extends PureComponent<Props, State> {
               <Tab tabIndex="-1">
                 <Button value="Shortcuts">Keyboard</Button>
               </Tab>
-              <Tab tabIndex="-1">
+              {/* <Tab tabIndex="-1">
                 <Button value="Account">Account</Button>
-              </Tab>
-              <Tab tabIndex="-1">
+              </Tab> */}
+              {/* <Tab tabIndex="-1">
                 <Button value="Plugins">Plugins</Button>
-              </Tab>
+              </Tab> */}
             </TabList>
             <TabPanel className="react-tabs__tab-panel pad scrollable">
               <General />
@@ -120,12 +120,12 @@ export class UnconnectedSettingsModal extends PureComponent<Props, State> {
                 handleUpdateKeyBindings={this._handleUpdateKeyBindings}
               />
             </TabPanel>
-            <TabPanel className="react-tabs__tab-panel pad scrollable">
+            {/* <TabPanel className="react-tabs__tab-panel pad scrollable">
               <Account />
-            </TabPanel>
-            <TabPanel className="react-tabs__tab-panel pad scrollable">
+            </TabPanel> */}
+            {/* <TabPanel className="react-tabs__tab-panel pad scrollable">
               <Plugins settings={settings} />
-            </TabPanel>
+            </TabPanel> */}
           </Tabs>
         </ModalBody>
       </Modal>

@@ -192,6 +192,8 @@ const setIsFinishedBooting = (isFinishedBooting: boolean) => ({
 });
 
 export const newCommand = (command: string, args: any) => async (dispatch: Dispatch<any>) => {
+  console.log(command);
+  console.log(args);
   switch (command) {
     case COMMAND_ALERT:
       showModal(AlertModal, {
@@ -283,13 +285,14 @@ export const newCommand = (command: string, args: any) => async (dispatch: Dispa
       break;
 
     case COMMAND_GITHUB_OAUTH_AUTHENTICATE: {
-      await exchangeCodeForToken(args).catch((error: Error) => {
-        showError({
-          error,
-          title: 'Error authorizing GitHub',
-          message: error.message,
-        });
-      });
+      // await exchangeCodeForToken(args).catch((error: Error) => {
+      //   showError({
+      //     error,
+      //     title: 'Error authorizing GitHub',
+      //     message: error.message,
+      //   });
+      // });
+      await exchangeCodeForToken(args);
       break;
     }
 

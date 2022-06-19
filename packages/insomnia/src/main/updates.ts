@@ -105,7 +105,7 @@ export async function init() {
     _showUpdateNotification();
   });
   ipcMain.on('updater.check', async () => {
-    await _checkForUpdates(true);
+    await _checkForUpdates(false);
   });
   // Check for updates on an interval
   setInterval(async () => {
@@ -143,26 +143,26 @@ async function _checkForUpdates(force: boolean) {
     return;
   }
 
-  const updateUrl = await getUpdateUrl(force);
+  // const updateUrl = await getUpdateUrl(force);
 
-  if (updateUrl === null) {
-    console.log(
-      `[updater] Updater not running platform=${process.platform} dev=${isDevelopment()}`,
-    );
+  // if (updateUrl === null) {
+  //   console.log(
+  //     `[updater] Updater not running platform=${process.platform} dev=${isDevelopment()}`,
+  //   );
 
-    _sendUpdateComplete(false, 'Updates Not Supported');
+  //   _sendUpdateComplete(false, 'Updates Not Supported');
 
-    return;
-  }
+  //   return;
+  // }
 
-  try {
-    console.log(`[updater] Checking for updates url=${updateUrl}`);
-    // @ts-expect-error -- TSCONVERSION appears to be a genuine error
-    autoUpdater.setFeedURL(updateUrl);
-    autoUpdater.checkForUpdates();
-  } catch (err) {
-    console.warn('[updater] Failed to check for updates:', err.message);
+  // try {
+  //   console.log(`[updater] Checking for updates url=${updateUrl}`);
+  //   // @ts-expect-error -- TSCONVERSION appears to be a genuine error
+  //   autoUpdater.setFeedURL(updateUrl);
+  //   autoUpdater.checkForUpdates();
+  // } catch (err) {
+  //   console.warn('[updater] Failed to check for updates:', err.message);
 
-    _sendUpdateComplete(false, 'Update Error');
-  }
+  //   _sendUpdateComplete(false, 'Update Error');
+  // }
 }

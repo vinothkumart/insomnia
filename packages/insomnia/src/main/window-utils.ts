@@ -44,7 +44,7 @@ export function createWindow() {
   const { bounds, fullscreen, maximize } = getBounds();
   const { x, y, width, height } = bounds;
 
-  const appLogo = 'static/insomnia-core-logo_16x.png';
+  const appLogo = 'static/adkrage.png';
   let isVisibleOnAnyDisplay = true;
 
   for (const d of electron.screen.getAllDisplays()) {
@@ -353,22 +353,22 @@ export function createWindow() {
           shell.showItemInFolder(directory);
         },
       },
-      {
-        type: 'separator',
-      },
-      {
-        label: 'Show Open Source Licenses',
-        click: () => {
-          const licensePath = path.resolve(app.getAppPath(), '../opensource-licenses.txt');
-          shell.openPath(licensePath);
-        },
-      },
-      {
-        label: 'Show Software License',
-        click: () => {
-          clickLink('https://insomnia.rest/license');
-        },
-      },
+      // {
+      //   type: 'separator',
+      // },
+      // {
+      //   label: 'Show Open Source Licenses',
+      //   click: () => {
+      //     const licensePath = path.resolve(app.getAppPath(), '../opensource-licenses.txt');
+      //     shell.openPath(licensePath);
+      //   },
+      // },
+      // {
+      //   label: 'Show Software License',
+      //   click: () => {
+      //     clickLink('https://insomnia.rest/license');
+      //   },
+      // },
     ],
   };
 
@@ -473,29 +473,29 @@ export function createWindow() {
       },
     ],
   };
-  const toolsMenu: MenuItemConstructorOptions = {
-    label: `${MNEMONIC_SYM}Tools`,
-    submenu: [
-      {
-        label: `${MNEMONIC_SYM}Reload Plugins`,
-        click: () => {
-          const w = BrowserWindow.getFocusedWindow();
+  // const toolsMenu: MenuItemConstructorOptions = {
+  //   label: `${MNEMONIC_SYM}Tools`,
+  //   submenu: [
+  //     {
+  //       label: `${MNEMONIC_SYM}Reload Plugins`,
+  //       click: () => {
+  //         const w = BrowserWindow.getFocusedWindow();
 
-          if (!w || !w.webContents) {
-            return;
-          }
+  //         if (!w || !w.webContents) {
+  //           return;
+  //         }
 
-          w.webContents.send('reload-plugins');
-        },
-      },
-    ],
-  };
+  //         w.webContents.send('reload-plugins');
+  //       },
+  //     },
+  //   ],
+  // };
   const template: MenuItemConstructorOptions[] = [];
   template.push(applicationMenu);
   template.push(editMenu);
   template.push(viewMenu);
   template.push(windowMenu);
-  template.push(toolsMenu);
+  // template.push(toolsMenu);
   template.push(helpMenu);
 
   if (isDevelopment() || process.env.INSOMNIA_FORCE_DEBUG) {

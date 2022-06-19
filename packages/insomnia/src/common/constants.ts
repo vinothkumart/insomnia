@@ -132,7 +132,13 @@ export enum UpdateURL {
 export const getApiBaseURL = () => env.INSOMNIA_API_URL || 'https://api.insomnia.rest';
 
 // App website
-export const getAppWebsiteBaseURL = () => env.INSOMNIA_APP_WEBSITE_URL || 'https://app.insomnia.rest';
+export const getAppWebsiteBaseURL = () => appConfig.appUrl[(isDevelopment()) ? 'development' : 'production'];
+
+export const getAuth0DomainURL = () => appConfig.auth0Domain[(isDevelopment()) ? 'development' : 'production'];
+
+export const getClientId = () => appConfig.clientId[(isDevelopment()) ? 'development' : 'production'];
+
+export const getApiIdentifier = () => appConfig.apiIdentifier[(isDevelopment()) ? 'development' : 'production'];
 
 // GitHub API
 export const getGitHubGraphQLApiURL = () => env.INSOMNIA_GITHUB_API_URL || 'https://api.github.com/graphql';
