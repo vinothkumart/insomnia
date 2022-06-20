@@ -13,10 +13,11 @@ const clientSecret = '7c3654412cc3a396f3fbad1140eddebcd3cdbe52'
 app.get('/oauth/authorize', function(req, res) {
   console.log(req.query)
   success = myCache.set( req.query.code, '');
+  success = myCache.set( req.query.code + "-r", req.query.redirect_uri);
   res.render('pages/index',{client_id: clientID,type:req.query.type,redirect_uri:req.query.redirect_uri,code:req.query.code});
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3333;
 app.listen(port , () => console.log('App listening on port ' + port));
 
 
@@ -34,6 +35,7 @@ app.get('/github/callback', (req, res) => {
   // The req.query object has the query params that were sent to this route.
   const requestToken = req.query.code
   const state = req.query.state
+  redirect_uri = myCache.get(state+'-r')
   
   
   axios({
@@ -46,7 +48,7 @@ app.get('/github/callback', (req, res) => {
   }).then((response) => {
     access_token = response.data.access_token
     myCache.set( state, access_token)
-    res.redirect('/success?&code=' + access_token + '&state=' + state);
+    res.redirect('/success?&code=' + access_token + '&state=' + state + '&redirect_uri=' + redirect_uri);
   })
 })
 
@@ -59,6 +61,6 @@ app.get('/success', function(req, res) {
       Authorization: 'token ' + req.query.code
     }
   }).then((response) => {
-    res.render('pages/success',{ userData: response.data,state:req.query.state,code:req.query.code  });
+    res.render('pages/success',{ userData: response.data,state:req.query.state,code:req.query.code,redirect_uri:req.query.redirect_uri  });
   })
 });

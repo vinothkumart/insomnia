@@ -111,9 +111,9 @@ export const ImportExport: FC<Props> = ({ hideSettingsModal }) => {
           </DropdownItem>
         </Dropdown>
           &nbsp;&nbsp;
-        <Link href="https://insomnia.rest/create-run-button" className="btn btn--compact" button>
+        {/* <Link href="https://insomnia.rest/create-run-button" className="btn btn--compact" button>
           Create Run Button
-        </Link>
+        </Link> */}
       </div>
       <p className="italic faint">* Tip: You can also paste Curl commands into the URL bar</p>
     </div>

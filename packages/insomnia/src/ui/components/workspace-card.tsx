@@ -89,15 +89,16 @@ export const WorkspaceCard: FC<WorkspaceCardProps> = ({
         </Fragment>
       );
     }
-  } else if (lastCommitTime) {
-    // Show last commit time and author
-    log = (
-      <Fragment>
-        <TimeFromNow timestamp={lastCommitTime} />{' '}
-        {lastCommitAuthor && `by ${lastCommitAuthor}`}
-      </Fragment>
-    );
   }
+  // else if (lastCommitTime) {
+  //   // Show last commit time and author
+  //   log = (
+  //     <Fragment>
+  //       <TimeFromNow timestamp={lastCommitTime} />{' '}
+  //       {lastCommitAuthor && `by ${lastCommitAuthor}`}
+  //     </Fragment>
+  //   );
+  // }
   const docMenu = (
     <WorkspaceCardDropdown
       apiSpec={apiSpec}
@@ -140,8 +141,24 @@ export const WorkspaceCard: FC<WorkspaceCardProps> = ({
   }
 
   return (
+  //   <Card
+  //     docBranch={branch ? <Highlight search={filter} text={branch} /> : undefined}
+  //     docTitle={title ? <Highlight search={filter} text={title} /> : undefined}
+  //     docVersion={version ? <Highlight search={filter} text={version} /> : undefined}
+  //     tagLabel={label ? (
+  //       <>
+  //         <span className="margin-right-xs">{labelIcon}</span>
+  //         <Highlight search={filter} text={label} />
+  //       </>
+  //     ) : undefined}
+  //     docLog={log}
+  //     docMenu={docMenu}
+  //     docFormat={format}
+  //     onClick={() => onSelect(workspace._id, defaultActivity)}
+  //   />
+  // );
     <Card
-      docBranch={branch ? <Highlight search={filter} text={branch} /> : undefined}
+      docBranch={undefined}
       docTitle={title ? <Highlight search={filter} text={title} /> : undefined}
       docVersion={version ? <Highlight search={filter} text={version} /> : undefined}
       tagLabel={label ? (

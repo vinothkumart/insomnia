@@ -105,6 +105,7 @@ const insomniaAdapter: DbAdapter = async (filePath, filterTypes) => {
   // Execute translation between raw and imported models
   parsed.resources.forEach(model => {
     // If there is no filter to apply, or this model is included in the filter
+    console.log(model);
     if (!toFilter.size || toFilter.has(parseRawType(model._type))) {
       // Rename field, transform value and return a new object
       const obj = parseRaw(model);

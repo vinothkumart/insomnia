@@ -89,7 +89,6 @@ class UnconnectedWrapperDebug extends PureComponent<Props> {
     return (
       <WorkspacePageHeader
         handleActivityChange={handleActivityChange}
-        gridRight={sync}
       />
     );
   }

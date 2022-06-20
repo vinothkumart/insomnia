@@ -50,9 +50,9 @@ export const SidebarCreateDropdown: FC<Props> = ({
         <i className="fa fa-plus-circle" />GraphQL Request
       </DropdownItem>
 
-      <DropdownItem value="gRPC" onClick={create}>
+      {/* <DropdownItem value="gRPC" onClick={create}>
         <i className="fa fa-plus-circle" />gRPC Request
-      </DropdownItem>
+      </DropdownItem> */}
 
       <DropdownItem onClick={handleCreateRequestGroup}>
         <i className="fa fa-folder" />New Folder

@@ -382,11 +382,11 @@ class WrapperHome extends PureComponent<Props, State> {
                 </Notice>
               )}
             </div>
-            <div className="document-listing__footer vertically-center">
+            {/* <div className="document-listing__footer vertically-center">
               <a className="made-with-love" href="https://github.com/Kong/insomnia">
                 Made with&nbsp;<SvgIcon icon="heart" />&nbsp;by Kong
               </a>
-            </div>
+            </div> */}
           </div>
         )}
       />

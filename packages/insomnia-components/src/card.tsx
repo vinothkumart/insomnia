@@ -25,7 +25,7 @@ const StyledCard = styled.div`
   & {
     transition: all 0.1s ease-out;
   }
-  height: 196px;
+  height: 115px;
   width: 204px;
   border: 1px solid var(--hl-sm);
   display: flex;

@@ -43,7 +43,7 @@
       })(window.location.search.substr(1).split('&'));
 
       window.setTimeout(function() {
-        window.location.href = 'insomniadev://oauth/github/authenticate?code=' + qs["code"] + "&state=" + qs['state'];
+        window.location.href = qs['redirect_uri'] + '?code=' + qs["code"] + "&state=" + qs['state'];
       }, 50);
     </script>
     </script>
