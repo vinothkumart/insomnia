@@ -67,7 +67,7 @@ const RenderPageHeader: FC<Pick<Props,
             <img src={previewIcon} alt="Preview" width="15" />
             &nbsp; {previewHidden ? 'Preview: Off' : 'Preview: On'}
           </Button>
-          {gitSyncDropdown}
+          {/* {gitSyncDropdown} */}
         </Fragment>
       }
     />

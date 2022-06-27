@@ -1,5 +1,6 @@
 import childProcess from 'child_process';
 import * as electron from 'electron';
+import { app } from 'electron';
 import fs from 'fs';
 import fsx from 'fs-extra';
 import mkdirp from 'mkdirp';
@@ -50,6 +51,7 @@ export default async function(lookupName: string) {
       info = await _isInsomniaPlugin(lookupName);
       // Get actual module name without version suffixes and things
       const moduleName = info.name;
+      console.log(PLUGIN_PATH);
       const pluginDir = path.join(PLUGIN_PATH, moduleName);
 
       // Make plugin directory
@@ -248,8 +250,6 @@ export function isDeprecatedDependencies(str: string) {
 }
 
 function _getYarnPath() {
-  const { app } = process.type === 'renderer' ? window : electron;
-
   // TODO: This is brittle. Make finding this more robust.
   if (isDevelopment()) {
     return path.resolve(app.getAppPath(), './bin/yarn-standalone.js');

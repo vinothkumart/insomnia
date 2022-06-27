@@ -1,0 +1,34 @@
+{
+  "name": "insomnia-plugin-repo-sync-3",
+  "version": "3.0.0",
+  "author": "Dotfile <contact@dotfile.com>",
+  "description": "Sync your workspace to a Git repository.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DotfileTech/insomnia-plugin-repo-sync-3.git"
+  },
+  "keywords": [
+    "insomnia",
+    "plugin",
+    "git"
+  ],
+  "bugs": {
+    "url": "https://github.com/DotfileTech/insomnia-plugin-repo-sync-3/issues"
+  },
+  "main": "src/index.js",
+  "insomnia": {
+    "name": "repo-sync-3",
+    "displayName": "Repo Sync Plugin v3",
+    "description": "This plugin allows users to sync workspaces in a configured repository.",
+    "images": {
+      "icon": "icon.svg"
+    },
+    "applications": {
+      "core": "*"
+    }
+  },
+  "dependencies": {},
+  "homepage": "https://github.com/DotfileTech/insomnia-plugin-repo-sync-3#readme",
+  "devDependencies": {}
+}
