@@ -283,14 +283,14 @@ class GitSyncDropdown extends PureComponent<Props, State> {
         </DropdownButton>
       ));
 
-    if (!vcs.isInitialized()) {
-      return renderBtn(
-        <Fragment>
-          <i className="fa fa-code-fork space-right" />
-          Setup Git Sync
-        </Fragment>,
-      );
-    }
+    // if (!vcs.isInitialized()) {
+    //   return renderBtn(
+    //     <Fragment>
+    //       <i className="fa fa-code-fork space-right" />
+    //       Setup Git Sync
+    //     </Fragment>,
+    //   );
+    // }
 
     const initializing = false;
     return renderBtn(

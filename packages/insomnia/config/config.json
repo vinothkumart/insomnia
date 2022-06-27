@@ -1,7 +1,7 @@
 {
   "name": "rage",
   "appId": "com.insomnia.app",
-  "userDataFolder": "rage-app",
+  "userDataFolder": "Rage",
   "productName": "Rage",
   "synopsis": "The Collaborative API Client and Design Tool",
   "icon": "https://github.com/kong/insomnia/blob/develop/packages/insomnia/src/icons/icon.ico?raw=true",

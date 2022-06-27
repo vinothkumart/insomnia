@@ -487,21 +487,22 @@ export class Wrapper extends PureComponent<WrapperProps, State> {
     let gitSyncDropdown: JSX.Element | null = null;
 
     if (activeWorkspace && gitVCS) {
-      gitSyncDropdown = (
-        <GitSyncDropdown
-          className="margin-left"
-          workspace={activeWorkspace}
-          gitRepository={activeGitRepository}
-          vcs={gitVCS}
-          handleInitializeEntities={handleInitializeEntities}
-          handleGitBranchChanged={this._handleGitBranchChanged}
-          renderDropdownButton={children => (
-            <DropdownButton className="btn--clicky-small btn-sync">
-              {children}
-            </DropdownButton>
-          )}
-        />
-      );
+      // gitSyncDropdown = (
+      //   <GitSyncDropdown
+      //     className="margin-left"
+      //     workspace={activeWorkspace}
+      //     gitRepository={activeGitRepository}
+      //     vcs={gitVCS}
+      //     handleInitializeEntities={handleInitializeEntities}
+      //     handleGitBranchChanged={this._handleGitBranchChanged}
+      //     renderDropdownButton={children => (
+      //       <DropdownButton className="btn--clicky-small btn-sync">
+      //         {children}
+      //       </DropdownButton>
+      //     )}
+      //   />
+      // );
+      gitSyncDropdown = null;
     }
 
     return (
