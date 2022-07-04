@@ -51,7 +51,6 @@ export default async function(lookupName: string) {
       info = await _isInsomniaPlugin(lookupName);
       // Get actual module name without version suffixes and things
       const moduleName = info.name;
-      console.log(PLUGIN_PATH);
       const pluginDir = path.join(PLUGIN_PATH, moduleName);
 
       // Make plugin directory

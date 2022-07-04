@@ -1,6 +1,6 @@
 {
   "name": "rage",
-  "appId": "com.insomnia.app",
+  "appId": "com.rage.restapiapp",
   "userDataFolder": "Rage",
   "productName": "Rage",
   "synopsis": "The Collaborative API Client and Design Tool",
@@ -32,8 +32,8 @@
     "production": "7c3654412cc3a396f3fbad1140eddebcd3cdbe52"
   },
   "apiIdentifier":{
-    "development": "com.insomnia.app",
-    "production": "com.insomnia.app"
+    "development": "com.rage.restapiapp",
+    "production": "com.rage.restapiapp"
   },
   
   "sentryDsn": "https://aaec2e800e644070a8daba5b7ad02c16@o1147619.ingest.sentry.io/6311804",

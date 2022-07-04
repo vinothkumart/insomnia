@@ -106,7 +106,7 @@ jobs:
         env:
           INSOMNIA_API_URL: ${{ secrets.INSOMNIA_API_URL }}
           INSOMNIA_API_TOKEN: ${{ secrets.INSOMNIA_API_TOKEN }}
-          RELEASE_APP: com.insomnia.app
+          RELEASE_APP: com.rage.restapiapp
           RELEASE_VERSION: ${{ env.RELEASE_VERSION }}
           RELEASE_CHANNEL: ${{ contains(github.event.inputs.version, 'beta') && 'beta' || 'stable' }}
 
@@ -133,7 +133,7 @@ jobs:
         env:
           SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_LOGIN_FILE }}
         with:
-          snap: artifacts/ubuntu-latest-artifacts/insomnia/dist/Insomnia.Core-${{ env.RELEASE_VERSION }}.snap
+          snap: artifacts/ubuntu-latest-artifacts/insomnia/dist/Rage.RestAPICore-${{ env.RELEASE_VERSION }}.snap
           release: stable
 
       - name: Publish npm packages
@@ -152,7 +152,7 @@ jobs:
           PULP_HOST: ${{ secrets.PULP_HOST }}
         with:
           entrypoint: python3
-          args: '/usr/src/code/main.py release --file artifacts/ubuntu-latest-artifacts/insomnia/dist/Insomnia.Core-${{ env.RELEASE_VERSION }}.deb --dist-name ubuntu --dist-version focal --package-type insomnia --publish'
+          args: '/usr/src/code/main.py release --file artifacts/ubuntu-latest-artifacts/insomnia/dist/Rage.RestAPICore-${{ env.RELEASE_VERSION }}.deb --dist-name ubuntu --dist-version focal --package-type insomnia --publish'
 
       - name: Push Inso CLI docker image tags to Docker Hub
         run: |

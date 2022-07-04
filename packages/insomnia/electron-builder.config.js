@@ -1,4 +1,4 @@
-const BINARY_PREFIX = 'Insomnia.Core';
+const BINARY_PREFIX = 'Rage.Core';
 
 // NOTE: USE_HARD_LINKS
 // https://github.com/electron-userland/electron-builder/issues/4594#issuecomment-574653870
@@ -8,7 +8,7 @@ const BINARY_PREFIX = 'Insomnia.Core';
  * @see https://www.electron.build/configuration/configuration
  */
 const config = {
-  appId: 'com.insomnia.app',
+  appId: 'com.rage.restapiapp',
   protocols: [
     {
       name: 'Insomnia',
@@ -43,6 +43,7 @@ const config = {
   },
   fileAssociations: [],
   mac: {
+    identity: 'F920A3C2647176A7789F3B40F6734280AD78DFE4',
     hardenedRuntime: true,
     category: 'public.app-category.developer-tools',
     entitlements: './build/static/entitlements.mac.inherit.plist',

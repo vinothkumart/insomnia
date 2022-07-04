@@ -20,7 +20,6 @@ export const getPortableExecutableDir = () => process.env['PORTABLE_EXECUTABLE_D
 
 export function getDataDirectory() {
   const { app } = process.type === 'renderer' ? window : electron;
-  console.log('DATA', process.env['INSOMNIA_DATA_PATH'] || app.getPath('userData'));
   return process.env['INSOMNIA_DATA_PATH'] || app.getPath('userData');
 }
 

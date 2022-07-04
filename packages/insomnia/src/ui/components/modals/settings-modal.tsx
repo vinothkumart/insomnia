@@ -96,12 +96,12 @@ export class UnconnectedSettingsModal extends PureComponent<Props, State> {
               <Tab tabIndex="-1">
                 <Button value="Shortcuts">Keyboard</Button>
               </Tab>
-              <Tab tabIndex="-1">
+              {/* <Tab tabIndex="-1">
                 <Button value="Account">Account</Button>
               </Tab>
               <Tab tabIndex="-1">
                 <Button value="Plugins">Plugins</Button>
-              </Tab>
+              </Tab> */}
             </TabList>
             <TabPanel className="react-tabs__tab-panel pad scrollable">
               <General />
@@ -120,12 +120,12 @@ export class UnconnectedSettingsModal extends PureComponent<Props, State> {
                 handleUpdateKeyBindings={this._handleUpdateKeyBindings}
               />
             </TabPanel>
-            <TabPanel className="react-tabs__tab-panel pad scrollable">
+            {/* <TabPanel className="react-tabs__tab-panel pad scrollable">
               <Account />
             </TabPanel>
             <TabPanel className="react-tabs__tab-panel pad scrollable">
               <Plugins settings={settings} />
-            </TabPanel>
+            </TabPanel> */}
           </Tabs>
         </ModalBody>
       </Modal>

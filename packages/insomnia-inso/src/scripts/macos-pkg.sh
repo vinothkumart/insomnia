@@ -30,7 +30,7 @@ SOURCE_BINARY_NAME="inso"
 INSTALL_LOCATION="/usr/local/bin"
 KEYCHAIN="inso.keychain"
 KEYCHAIN_PASSWORD="inso"
-
+echo "TEST"
 # Create temporary keychain
 security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
 security list-keychains -d user -s "$KEYCHAIN" $(security list-keychains -d user | tr -d '"')
