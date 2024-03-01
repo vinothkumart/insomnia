@@ -98,10 +98,10 @@ export class UnconnectedSettingsModal extends PureComponent<Props, State> {
               </Tab>
               {/* <Tab tabIndex="-1">
                 <Button value="Account">Account</Button>
-              </Tab>
+              </Tab>*/}
               <Tab tabIndex="-1">
                 <Button value="Plugins">Plugins</Button>
-              </Tab> */}
+              </Tab> 
             </TabList>
             <TabPanel className="react-tabs__tab-panel pad scrollable">
               <General />
@@ -122,10 +122,10 @@ export class UnconnectedSettingsModal extends PureComponent<Props, State> {
             </TabPanel>
             {/* <TabPanel className="react-tabs__tab-panel pad scrollable">
               <Account />
-            </TabPanel>
+            </TabPanel>*/}
             <TabPanel className="react-tabs__tab-panel pad scrollable">
               <Plugins settings={settings} />
-            </TabPanel> */}
+            </TabPanel> 
           </Tabs>
         </ModalBody>
       </Modal>

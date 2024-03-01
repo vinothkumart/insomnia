@@ -311,13 +311,14 @@ export async function getDocumentActions(): Promise<DocumentAction[]> {
   let extensions: DocumentAction[] = [];
 
   for (const plugin of await getActivePlugins()) {
-    const actions = plugin.module.documentActions || [];
+    // const actions = plugin.module.documentActions || [];
+    // const actions = [];
     extensions = [
       ...extensions,
-      ...actions.map(p => ({
-        plugin,
-        ...p,
-      })),
+      // ...actions.map(p => ({
+      //   plugin,
+      //   ...p,
+      // })),
     ];
   }
 

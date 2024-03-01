@@ -27,6 +27,9 @@ export class AuthService {
     const defaultProtocol:String = `rage${isDevelopment() ? 'dev' : ''}`;
     const fullDefaultProtocol:String = `${defaultProtocol}://`;
     const redirectUri:String = `${fullDefaultProtocol}oauth/github/authenticate`;
+    console.log(defaultProtocol);
+    console.log(fullDefaultProtocol);
+    console.log(redirectUri);
     return (
       getAuth0DomainURL() +
           '/authorize?' +
