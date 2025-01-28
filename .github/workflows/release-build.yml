@@ -71,13 +71,15 @@ jobs:
         run: |
           echo "INSO_VERSION=$(jq .version ./packages/${{ env.INSO_PACKAGE_NAME }}/package.json -rj)" >> $GITHUB_ENV
 
-      - name: Install snapcraft (Linux arm64 only)
+      - name: Package app (Linux arm64 only)
         if: runner.os == 'Linux' && runner.arch == 'arm64'
         shell: bash
-        run: sudo snap install snapcraft --classic 
+        run: BUILD_TARGETS='tar.gz' npm run app-package
+        env:
+          NODE_OPTIONS: '--max_old_space_size=6144'
 
-      - name: Package app (Linux only)
-        if: runner.os == 'Linux'
+      - name: Package app (Linux x64 only)
+        if: runner.os == 'Linux' && runner.arch == 'x64'
         shell: bash
         run: npm run app-package
         env:
